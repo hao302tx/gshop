@@ -1,0 +1,64 @@
+<html>
+    <head></head>
+    <body>
+        <div>
+            <form action="" method="post" name="form" onsubmit="return Check()">
+                <input type="text" placeholder="输入文章链接" name="text1">
+                <button type="submit" onclick="loadText()">添加</button>
+            </form>
+            <table>
+               
+            </table>
+        </div>
+    </body>
+    <script>
+        var text1 = document.getElementsByTagName('input')[0];
+        function Check() {
+        if(text1.value == '') {
+            alert("文本框不能为空");
+            return false;
+            }
+        }
+        function loadText(callback) {
+            var xhr;
+            if(window.XMLHttpRequest) {
+                xhr = new XMLHttpRequest();
+            } else {
+                xhr = new ActiveXObject('Microsoft.XMLHTTP');
+            }
+            xhr.onreadystatechange = function() {
+                if(xhr.readystate == 4) {
+                    if((xhr.status <= 300 && xhr.status >= 200) || xhr.status == 304) {
+                        callback(xhr.responseText);
+                    }
+                }
+            }
+            xhr.open('POST','url',true);
+            xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+            xhr.send("text =" + text1.value);
+        }
+        function CreateTable(xml) {
+            var xmlDoc = xml.responseXML;
+            var table = " <tr><th>标题</th><th>字数</th><th>中文字数</th><th>英文字数</th><th>标点符号数</th></tr>";
+            for(let i = 0 ; i < xmlDoc.length; i++){
+
+            }
+        }
+        Array.prototype.uqie =  function() {
+            var resArr = [];
+            var flag = true;
+            for(var i = 0; i < this.length; i ++) {
+                if(resArr.indexOf(this[i]) == -1) {
+                    if(this[i] != this[i]) {
+                        if(flag) {
+                            resArr.push(this[i]);
+                        }
+                    } else {
+                        resArr.push(this[i]);
+                    }
+                }
+            }
+        }
+     
+    </script>
+</html>

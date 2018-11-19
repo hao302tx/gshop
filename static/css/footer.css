@@ -1,0 +1,32 @@
+
+        .footer {
+             position: fixed;
+             bottom: 0;
+            
+             height: 86px;
+             width: 100%;
+             background: gainsboro;
+        }
+        .footer_container {
+            float: left;
+            width: 25%;
+        }
+        a {
+            float: left;
+            margin: 5px 31%;
+        }
+        .footer_span {
+            font-size: 118%;
+            /* padding: 4px 29%; */
+            margin: 5px 28%;
+        }
+        .pic_on {
+            /* box-shadow: 0 0 100px red; */
+            z-index: 100000;
+            filter: drop-shadow(0 0 10px red)
+            
+        }
+        .font_on {
+            color: blue;
+        }
+ 
